@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from appConcierto.views import index, listadoConcierto, agregarConcierto, actualizarConcierto, eliminarConcierto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #se agregan las otras rutas
+    path('', index),
+    path('conciertos/', listadoConcierto),
+    path('agregarConcierto/', agregarConcierto),
+    path('actualizarConcierto/<int:id>', actualizarConcierto),
+    path('eliminarConcierto/<int:id>', eliminarConcierto),
 ]
